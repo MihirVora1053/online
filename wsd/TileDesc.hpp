@@ -130,7 +130,10 @@ public:
                _normalizedViewId == other._normalizedViewId &&
                _mode == other._mode;
     }
-
+    bool operator!=(const TileDesc& other) const {
+    // Return the negation of operator==
+        return !(*this == other);
+    }
     // used to cache a hash of the key elements compared in ==
     uint32_t equalityHash() const
     {
